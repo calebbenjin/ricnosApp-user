@@ -1,0 +1,137 @@
+.cardBg {
+  position: relative;
+  height: 100%;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.726), rgba(0, 0, 0, 0.719)), url(../assets/loginbg.png);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 2rem 0;
+}
+.pickupOrder {
+  position: relative;
+  height: 100%;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.822), rgba(0, 0, 0, 0.828)), url(../assets/african-american.png);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 2rem 0;
+}
+
+.checkboxContainer {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkboxContainer input{
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkMark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  width: 5rem;
+  background-color: blue;
+}
+
+.checkboxContainer:hover input ~ span {
+  border: solid 2px red;
+}
+
+.checkboxContainer input:checked ~ span {
+  background: #fff;
+}
+
+.checkMark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+
+.signupBg {
+  position: relative;
+  height: 100vh;
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.726), rgba(0, 0, 0, 0.719)), url(../assets/packaging.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 2rem 0;
+}
+
+.form {
+  width: 95%;
+}
+
+.label {
+  display: inline-block;
+  padding: 8px 12px; 
+  cursor: pointer;
+  border-radius: 4px;
+  background-color: #9c27b0;
+  font-size: 16px;
+  color: #fff;
+}
+/* .input[type="file"] {
+  position: absolute;
+  z-index: -1;
+  top: 6px;
+  left: 0;
+  font-size: 15px;
+  color: rgb(153,153,153);
+} */
+.wrapper {
+  position: relative;
+} 
+
+.addBtn {
+  background: transparent;
+}
+
+@media screen and (min-width: 1024px) {
+  .form {
+    width: 35%;
+  }
+  .pickupForm {
+    width: 60%;
+  }
+
+  .cardBg {
+    padding: 10rem 0;
+    height: 100%;
+  }
+  .pickupOrder {
+    padding: 10rem 0;
+    height: 100%;
+  }
+  .signupBg {
+    padding: 10rem 0;
+    height: 100%;
+  }
+}

@@ -1,0 +1,12 @@
+.btn_bg {
+  background: red;
+  margin-left: 2rem;
+  padding: 1.5rem;
+}
+
+
+.btn_border {
+  background: transparent;
+  border: solid 1px red;
+  margin-left: 2rem;
+}
