@@ -11,12 +11,16 @@ export default [
     path: "contact",
     label: "Contact"
   },
-  // {
-  //   path: "login",
-  //   label: "Login"
-  // },
-  // {
-  //   path: "signup",
-  //   label: "Sign Up"
-  // }
+  {
+    path: "login",
+    label: "Login"
+  },
+  {
+    path: "signup",
+    label: "Sign Up"
+  },
+  {
+    path: "login",
+    label: "Request for pickup"
+  }
 ]

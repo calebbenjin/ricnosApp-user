@@ -14,6 +14,7 @@ export default function Navbar({ className }) {
         <Container maxWidth='container.xl' className='header'>
           <Flex>
             <Logo src={logoImage} />
+              
             <Spacer />
             <Flex as='nav' alignItems='alignItems'>
               <Link href="/">
@@ -25,12 +26,15 @@ export default function Navbar({ className }) {
               <Link href="/contact">
                 <a>Contact</a>
               </Link>
-              <Link href="/orderPickUp">
+              <Link href="/login">
                 <a>
                 <Button>Request pickup</Button>
                 </a>
               </Link>
             </Flex>
+            <Link href="/login">
+                <a className="navBtn">Request pickup</a>
+              </Link>
             <Drawer />
           </Flex>
         </Container>
@@ -64,6 +68,19 @@ const Header = styled.header`
   background-color: transparent;
   transition: all 0.4s ease;
   animation: ${positionAnim} 0.4s ease;
+  .navBtn {
+    background: red;
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    padding: 0 10px;
+    margin-right: 1.3rem;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    @media screen and (min-width: 1024px) {
+      display: none;
+    }
+  }
   &.sticky {
     position: fixed;
     background-color: #333;

@@ -4,7 +4,12 @@ import styled from 'styled-components'
 import styles from '../../styles/Drawer.module.css'
 import Link from 'next/link'
 import menuItems from '../localData/nav.data'
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaLinkedinIn,
+} from 'react-icons/fa'
 import {
   Drawer,
   DrawerBody,
@@ -15,7 +20,6 @@ import {
   useDisclosure,
   Box,
 } from '@chakra-ui/react'
-
 
 const social = [
   {
@@ -35,7 +39,6 @@ const social = [
     icon: <FaLinkedinIn />,
   },
 ]
-
 
 export default function NavDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -69,7 +72,7 @@ export default function NavDrawer() {
             <MenuFooter>
               <MenuSocial>
                 {social.map((socialItem, i) => (
-                  <Box as='span' key={i} className="icon">
+                  <Box as='span' key={i} className='icon'>
                     <Link href={socialItem.path}>{socialItem.icon}</Link>
                   </Box>
                 ))}
@@ -84,25 +87,24 @@ export default function NavDrawer() {
 
 const MenuLink = styled.div`
   width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 4rem;
-    a {
-      font-size: 16px;
-      font-weight: 500;
-      color: text_white;
-      padding-top: 2rem;
-      padding-bottom: 1rem;
-      cursor: pointer;
-      border-bottom: 1px solid #e8e5e5;
-      transition: all 0.25s;
-      &:hover {
-        color: #fff;
-      }
-      &.active {
-        color: red;
-      }
+  display: flex;
+  flex-direction: column;
+  margin-top: 2rem;
+  a {
+    font-size: 16px;
+    font-weight: 700;
+    /* padding-top: 2rem;
+    padding-bottom: 1rem; */
+    cursor: pointer;
+    border-bottom: 1px solid #e8e5e5;
+    transition: all 0.25s;
+    &:hover {
+      color: #fff;
     }
+    &.active {
+      color: red;
+    }
+  }
 `
 
 const MenuFooter = styled.div`
@@ -110,7 +112,7 @@ const MenuFooter = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-`;
+`
 
 const MenuSocial = styled.div`
   width: 100%;
@@ -128,10 +130,10 @@ const MenuSocial = styled.div`
     transition: all 0.25s;
     cursor: pointer;
     &:last-child {
-      margin-right: '0',
+      margin-right: '0';
     }
     &:hover {
       color: blue;
     }
   }
-`;
+`
