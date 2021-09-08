@@ -13,11 +13,10 @@ import {
   InputRightElement,
   Text,
   Heading,
-  Button,
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
-import { ButtonBg } from '../components/core/Button'
-import PinInput from '../components/PinInput'
+import Button from '../components/atoms/Buttons/FormBtn'
+// import PinInput from '../components/PinInput'
 
 export default function signupPage() {
   const {

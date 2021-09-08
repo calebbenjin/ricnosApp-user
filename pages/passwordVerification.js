@@ -2,9 +2,9 @@ import { useState } from 'react'
 import Layout from '../components/template/Layout'
 import styles from '@/styles/PinInput.module.css'
 import login from '@/styles/Login.module.css'
-import { Box, Container, Text, Heading, Button } from '@chakra-ui/react'
-import { useForm } from 'react-hook-form'
-import { ButtonBg } from '../components/core/Button'
+import { Box, Container, Text, Heading } from '@chakra-ui/react'
+// import { useForm } from 'react-hook-form'
+import Button from '../components/atoms/Buttons/FormBtn'
 
 export default function signupPage() {
   const [inputState, setInputState] = useState(new Array(6).fill(''))
@@ -24,7 +24,7 @@ export default function signupPage() {
 
   const handleSubmit = (evt) => {
     evt.preventDefault()
-    
+
     console.log(inputState)
   }
 
@@ -43,7 +43,13 @@ export default function signupPage() {
               <Text>Please Enter The Digital Code Sent TO</Text>
               <Text color='red'>user email</Text>
               <form onSubmit={handleSubmit}>
-                <Box bg='white' color='black' borderRadius='md' p={['4', '10']} mt='5'>
+                <Box
+                  bg='white'
+                  color='black'
+                  borderRadius='md'
+                  p={['4', '10']}
+                  mt='5'
+                >
                   <Text color='grey' mb='4' fontSize='sm'>
                     Enter 6-Digital Code Sent to your Email
                   </Text>
@@ -58,25 +64,16 @@ export default function signupPage() {
                         value={data}
                         key={index}
                         onChange={(e) => handleChange(e.target, index)}
-
                         onFocus={(e) => e.target.select()}
                       />
                     ))}
                   </Box>
                 </Box>
                 <Box>
-                  <Button
-                    type='submit'
-                    my='8'
-                    variant='ghost'
-                    colorScheme='red'
-                  >
-                    Resend Code
-                  </Button>
+                  <Button type='submit'>Resend Code</Button>
                 </Box>
 
-                <ButtonBg px='20' text='VERIFY' color='red' />
-                {/* <Button type="submit" color="red">LOGIN</Button> */}
+                <Button type='submit'>VERIFY</Button>
               </form>
             </Box>
           </Container>

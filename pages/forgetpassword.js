@@ -53,7 +53,7 @@ export default function forgetPasswordPage() {
                 </FormControl>
                 
 
-                <Button title="SEND" />
+                <Button type="submit">SEND</Button>
               </form>
             </Box>
           </Container>

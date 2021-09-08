@@ -7,8 +7,9 @@ import {
   FaMapMarkerAlt,
 } from 'react-icons/fa'
 import { MdPhoneAndroid } from 'react-icons/md'
-import { Box, Button, Container, Flex, FormControl, FormErrorMessage, Heading, Input, Text, Textarea } from "@chakra-ui/react";
+import { Box, Container, Flex, FormControl, FormErrorMessage, Heading, Input, Text, Textarea } from "@chakra-ui/react";
 import { useForm } from 'react-hook-form'
+import Button from '../components/UI/atoms/Buttons/FormBtn'
 
 
 
@@ -81,7 +82,7 @@ export default function contactPage() {
                       {errors.phone && errors.phone.message}
                     </FormErrorMessage>
                   </FormControl>
-                  <Button type="submit" colorScheme="red">Submit</Button>
+                  <Button type="submit">SEND</Button>
                 </form>
               </Box>
             </Box>
