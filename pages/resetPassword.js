@@ -110,8 +110,7 @@ export default function signupPage() {
 
                 
 
-                <ButtonBg px='20' text='VERIFY' color='red' />
-                {/* <Button type="submit" color="red">LOGIN</Button> */}
+                <Button type="submit">VERIFY</Button>
               </form>
             </Box>
           </Container>
