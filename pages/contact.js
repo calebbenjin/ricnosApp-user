@@ -9,7 +9,7 @@ import {
 import { MdPhoneAndroid } from 'react-icons/md'
 import { Box, Container, Flex, FormControl, FormErrorMessage, Heading, Input, Text, Textarea } from "@chakra-ui/react";
 import { useForm } from 'react-hook-form'
-import Button from '../components/UI/atoms/Buttons/FormBtn'
+import Button from '../components/atoms/Buttons/FormBtn'
 
 
 
