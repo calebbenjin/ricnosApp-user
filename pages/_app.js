@@ -1,35 +1,34 @@
 import customTheme from '../styles/theme'
 import Head from 'next/head'
 import { ChakraProvider, CSSReset } from '@chakra-ui/react'
-import { Global, css } from '@emotion/react';
-
-
+import { Global, css } from '@emotion/react'
+import { AuthProvider } from '../context/AuthContext'
 
 const GlobalStyle = ({ children }) => {
   return (
     <>
       <Head>
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content='width=device-width, initial-scale=1' name='viewport' />
       </Head>
       <CSSReset />
       <Global
         styles={css`
           html {
             scroll-behavior: smooth;
-          };
+          }
 
           ::-webkit-scrollbar {
             width: 5px;
           }
-            ::-webkit-scrollbar-track {
-            background: #f1f1f1; 
+          ::-webkit-scrollbar-track {
+            background: #f1f1f1;
           }
-            ::-webkit-scrollbar-thumb {
-            background: #333; 
-              border-radius:10px;
+          ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 10px;
           }
           ::-webkit-scrollbar-thumb:hover {
-            background: #555; 
+            background: #555;
           }
           .selected {
             background: #fafafa;
@@ -40,7 +39,6 @@ const GlobalStyle = ({ children }) => {
             outline: none;
             border: solid 1px #999 !important;
             color: #999 !important;
-            /* height: 3rem; */
             padding: 8px;
             border-radius: 4px;
             transition: all 0.5s ease-in-out;
@@ -50,7 +48,6 @@ const GlobalStyle = ({ children }) => {
             outline: none !important;
             border: solid 1px #999 !important;
             color: #333;
-            /* height: 3rem; */
             padding: 8px;
             border-radius: 4px;
             transition: all 0.5s ease-in-out;
@@ -66,7 +63,7 @@ const GlobalStyle = ({ children }) => {
           }
           body {
             background: #fafafa;
-          };
+          }
           .container {
             width: 90%;
             margin: 1rem auto;
@@ -83,15 +80,17 @@ const GlobalStyle = ({ children }) => {
       />
       {children}
     </>
-  );
-};
+  )
+}
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ChakraProvider theme={customTheme}>
-      <GlobalStyle />
-      <Component {...pageProps} />
-    </ChakraProvider>
+    <AuthProvider>
+      <ChakraProvider theme={customTheme}>
+        <GlobalStyle />
+        <Component {...pageProps} />
+      </ChakraProvider>
+    </AuthProvider>
   )
 }
 

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import Layout from "../components/template/Layout";
 import Link from 'next/link'
 import { BsEye } from 'react-icons/bs'
@@ -8,7 +8,6 @@ import {
   Box,
   FormControl,
   FormErrorMessage,
-  Input,
   FormLabel,
   Container,
   InputGroup,
@@ -21,8 +20,11 @@ import {
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 import Button from '../components/atoms/Buttons/FormBtn'
+import AuthContext from '../context/AuthContext'
 
 export default function loginPage() {
+  const {user} = useContext(AuthContext)
+  
   const {
     register,
     handleSubmit,
@@ -33,6 +35,8 @@ export default function loginPage() {
   const handleClick = () => setShow(!show)
 
   const router = useRouter()
+
+
   const onSubmit = (data, e) => {
     e.preventDefault()
     console.log(data)
@@ -52,11 +56,10 @@ export default function loginPage() {
               <form onSubmit={handleSubmit(onSubmit)}>
                 <FormControl isInvalid={errors.email}>
                   <FormLabel fontWeight='normal'>Email</FormLabel>
-                  <Input
+                  <input
                     type='email'
                     id='email'
                     placeholder='Enter Email'
-                    borderColor='grey'
                     {...register('email', { required: 'Email is required' })}
                   />
                   <FormErrorMessage>
@@ -66,9 +69,9 @@ export default function loginPage() {
                 <FormControl isInvalid={errors.password} my='5'>
                   <FormLabel fontWeight='normal'>Password</FormLabel>
                   <InputGroup>
-                    <Input
-                      borderColor='grey'
+                    <input
                       pr='2rem'
+                      id="password"
                       type={show ? 'text' : 'password'}
                       placeholder='Enter password'
                       {...register('password', { required: 'Password is Required'})}

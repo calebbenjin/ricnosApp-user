@@ -56,7 +56,7 @@ export default function signupPage() {
               <form onSubmit={handleSubmit(onSubmit)}>
                 <FormControl isInvalid={errors.email}>
                   <FormLabel fontWeight='normal'>Email</FormLabel>
-                  <Input
+                  <input
                     type='email'
                     id='email'
                     placeholder='Enter Email'
@@ -69,7 +69,7 @@ export default function signupPage() {
                 </FormControl>
                 <FormControl isInvalid={errors.phone} mt='6'>
                   <FormLabel fontWeight='normal'>Phone Number</FormLabel>
-                  <Input
+                  <input
                     type='text'
                     id='phone-number'
                     placeholder='Enter Phone Number'
@@ -83,7 +83,7 @@ export default function signupPage() {
                 <FormControl isInvalid={errors.password} my='5'>
                   <FormLabel fontWeight='normal'>Password</FormLabel>
                   <InputGroup>
-                    <Input
+                    <input
                       borderColor='grey'
                       id="password"
                       pr='2rem'
@@ -113,7 +113,7 @@ export default function signupPage() {
                 <FormControl isInvalid={errors.confirmPassword} my='5'>
                   <FormLabel fontWeight='normal'>Confirm Password</FormLabel>
                   <InputGroup>
-                    <Input
+                    <input
                       borderColor='grey'
                       id="confirm-password"
                       pr='2rem'
@@ -157,7 +157,6 @@ export default function signupPage() {
                 </Box>
 
                 <Button>Sign up</Button>
-                {/* <Button type="submit" color="red">LOGIN</Button> */}
               </form>
             </Box>
           </Container>
