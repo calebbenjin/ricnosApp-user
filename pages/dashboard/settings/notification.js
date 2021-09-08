@@ -5,7 +5,6 @@ import {
   Checkbox,
   Container,
   Flex,
-  Heading,
   List,
   ListItem,
   Text,

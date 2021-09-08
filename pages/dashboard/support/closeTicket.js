@@ -1,7 +1,6 @@
 import { Flex, Box, Container, Text, Heading, Button } from '@chakra-ui/react'
 import Layout from '../../../components/template/DashboardLayout'
 import Link from '../../../components/atoms/Links'
-import { TiPlus } from 'react-icons/ti'
 import setting from '../../../styles/Settings.module.css'
 
 export default function openTicket() {

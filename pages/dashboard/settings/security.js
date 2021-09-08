@@ -10,13 +10,12 @@ import {
   InputGroup,
   InputRightElement,
   FormErrorMessage,
-  Checkbox,
   Heading,
   Switch,
 } from '@chakra-ui/react'
 import Layout from '../../../components/template/DashboardLayout'
 import { useState } from 'react'
-import { BsEye, BsEyeSlash } from 'react-icons/bs'
+import { BsEye } from 'react-icons/bs'
 import { useForm } from 'react-hook-form'
 import Button from '../../../components/atoms/Buttons/FormBtn'
 

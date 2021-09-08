@@ -8,7 +8,7 @@ import affordIcon from '../assets/icons/affordableicon.svg'
 import warehouseIcon from '../assets/icons/warehouse-icon.svg'
 import deliveryIcon from '../assets/icons/delivery.svg'
 import safeIcon from '../assets/icons/safcon.svg'
-import layerIcon from '../assets/icons/layericon.svg'
+// import layerIcon from '../assets/icons/layericon.svg'
 import { Box, Container, Text, Heading, Flex, Image } from "@chakra-ui/react";
 
 
@@ -49,7 +49,7 @@ export default function about() {
             <Flex wrap="wrap">
               <Box className={style.card} position="relative" w={['100%', '50%']} h={['300px', '380px']}>
                 <Box bg="red" color="white" p="4"  position="absolute" bottom="0" left="0" w={['150px', '30%']} h={['220px', '50%']}>
-                  <Image src={layerIcon} />
+                  {/* <Image src={layerIcon} /> */}
                   <Text my="6">Affordable price, certified forwarder</Text>
                   <FaLongArrowAltRight />
                 </Box>
