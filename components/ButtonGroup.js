@@ -1,5 +1,4 @@
-import { Box, Container, Flex } from '@chakra-ui/react';
-import { IoIosArrowRoundBack, IoIosArrowRoundForward } from 'react-icons/io';
+import { Box, Flex } from '@chakra-ui/react';
 
 export default function ButtonGroup({ next, previous, bg, justify, mt }) {
   return (

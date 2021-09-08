@@ -1,8 +1,8 @@
 import React from 'react'
 import { Box, Container } from '@chakra-ui/react'
-import styles from '../../styles/Banner.module.css'
+// import styles from '../../styles/Banner.module.css'
 import Heading from '../core/Heading'
-import BannerCard from '../core/BannerCard'
+// import BannerCard from '../core/BannerCard'
 import TrackForm from '../TrackForm'
 
 export default function Banner({className, trackForm, card, title, des }) {

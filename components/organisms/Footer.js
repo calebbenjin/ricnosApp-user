@@ -10,7 +10,6 @@ import {
   Text,
   Link,
   VStack,
-  StackDivider,
 } from '@chakra-ui/react'
 import logoImage from '../../public/logo.svg'
 import {

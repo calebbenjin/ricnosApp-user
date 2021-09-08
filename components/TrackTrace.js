@@ -24,7 +24,7 @@ import Card from './core/Card'
 import { useForm } from 'react-hook-form'
 import TrackForm from './TrackForm'
 import Button from './atoms/Buttons/FormBtn'
-import VehicleComponent from './VehicleComponent'
+// import VehicleComponent from './VehicleComponent'
 
 export default function TrackTrace() {
   const {

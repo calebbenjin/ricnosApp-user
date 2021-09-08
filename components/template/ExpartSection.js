@@ -2,7 +2,7 @@ import { Box, Container, Flex, Heading, Text, Image, List, ListItem, ListIcon } 
 import { MdCheckCircle } from 'react-icons/md'
 import { FaLongArrowAltRight } from "react-icons/fa";
 import styles from '../../styles/ExpartSection.module.css'
-import layerIcon from '../../assets/icons/layericon.svg'
+// import layerIcon from '../../assets/icons/layericon.svg'
 import safcon from '../../assets/icons/safcon.svg'
 
 export default function ExpartSection() {
@@ -59,7 +59,7 @@ export default function ExpartSection() {
           <Flex wrap="wrap">
             <Box className={styles.card} position="relative" w={['100%', '50%']} h={['300px', '500px']}>
               <Box bg="red" color="white" p="4"  position="absolute" bottom="0" left="0" w={['150px', '30%']} h={['220px', '40%']}>
-                <Image src={layerIcon} />
+                {/* <Image src={layerIcon} /> */}
                 <Text my="6">Affordable price, certified forwarder</Text>
                 <FaLongArrowAltRight />
               </Box>
