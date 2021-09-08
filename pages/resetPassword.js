@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Layout from '../components/template/Layout'
 import { BsEye, BsEyeSlash } from 'react-icons/bs'
-import login from '@/styles/Login.module.css'
+import login from '../styles/Login.module.css'
 import {
   Box,
   FormControl,
@@ -55,10 +55,11 @@ export default function signupPage() {
                     <Input
                       borderColor='grey'
                       pr='2rem'
+                      id="newPassword"
                       type={show ? 'text' : 'password'}
                       placeholder='Enter password'
-                      {...register('password', {
-                        required: 'Password is Required',
+                      {...register('newPassword', {
+                        required: 'New Password is Required',
                       })}
                     />
                     <InputRightElement>
@@ -83,6 +84,7 @@ export default function signupPage() {
                   <InputGroup>
                     <Input
                       borderColor='grey'
+                      id="confirmpassword"
                       pr='2rem'
                       type={confirmShow  ? 'text' : 'password'}
                       placeholder='Confirm password'

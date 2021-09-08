@@ -2,7 +2,7 @@
 import Layout from "../components/template/Layout";
 // import Link from 'next/link'
 // import { BsEye } from 'react-icons/bs'
-import login from '@/styles/Login.module.css'
+import login from '../styles/Login.module.css'
 import {
   Box,
   FormControl,
