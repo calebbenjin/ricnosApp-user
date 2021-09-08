@@ -14,7 +14,7 @@ import {
   Heading,
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
-import Button from '../components/UI/atoms/Buttons/FormBtn'
+import Button from '../components/atoms/Buttons/FormBtn'
 
 export default function forgetPasswordPage() {
   const {
