@@ -1,9 +1,10 @@
 import styled from 'styled-components'
+import Loader from '../Loading'
 
-export default function FormBtn({ children}) {
+export default function FormBtn({isLoading, className, children, ...props}) {
   return (
-    <Button>
-      {children}
+    <Button className={className} {...props}>
+      {isLoading ? <Loader /> : children}
     </Button>
   )
 }

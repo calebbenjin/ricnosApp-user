@@ -47,15 +47,17 @@ const GlobalStyle = ({ children }) => {
           input {
             outline: none !important;
             border: solid 1px #999 !important;
-            color: #333;
+            color: #fff;
             padding: 8px;
             border-radius: 4px;
             transition: all 0.5s ease-in-out;
             width: 100%;
+            background: none !important;
           }
           input:focus {
             border: solid 1px #333 !important;
             padding-left: 1rem;
+            color: #333;
           }
           input::placeholder {
             color: #999;

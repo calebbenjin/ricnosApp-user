@@ -23,7 +23,7 @@ import { HiOutlineMail } from 'react-icons/hi'
 import { BsThreeDotsVertical } from 'react-icons/bs'
 import { RiUserLine } from 'react-icons/ri'
 import { IoNotificationsSharp, IoMailSharp } from 'react-icons/io5'
-import { ButtonBg } from '../core/Button'
+import Button from '../atoms/Buttons/FormBtn'
 import Logo from '../core/Logo'
 import Image from 'next/image'
 import logoImage from '../../assets/logo1.svg'
@@ -79,10 +79,8 @@ export default function layout({ children, title, description, keywords }) {
         <header className={styles.header} position='fixed' top='0'>
           <Container maxWidth='container.xl'>
             <Flex justify='space-between' alignItems='center'>
-              <Link href='/orderPickUp'>
-                <a>
-                  <ButtonBg text='Request pickup' color='red' px='4' />
-                </a>
+              <Link href='/dashboard/requests'>
+                <Button>Request pickup</Button>
               </Link>
 
               <Box as="nav">

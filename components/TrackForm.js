@@ -23,11 +23,10 @@ export default function TrackForm({ bg }) {
       <form onSubmit={handleSubmit(onSubmit)}>
           <Input
             type="text"
-            id="trackingnumber"
+            id="trackID"
             placeholder='Enter tracking ID'
-            bg={bg}
             size='lg'
-            {...register('trackingnumber', { required: 'Track number is Empty' })}
+            {...register('trackID')}
           />
         <Button>Track item</Button>
       </form>

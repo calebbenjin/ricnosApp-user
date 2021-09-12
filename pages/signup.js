@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import Layout from "../components/template/Layout";
 import Link from 'next/link'
 import { BsEye, BsEyeSlash } from 'react-icons/bs'
@@ -8,7 +8,6 @@ import {
   Box,
   FormControl,
   FormErrorMessage,
-  Input,
   FormLabel,
   Container,
   InputGroup,
@@ -20,6 +19,7 @@ import {
 } from '@chakra-ui/react'
 import { useForm } from 'react-hook-form'
 import Button from '../components/atoms/Buttons/FormBtn'
+import AuthContext from '../context/AuthContext'
 
 export default function signupPage() {
   const {
@@ -29,6 +29,7 @@ export default function signupPage() {
   } = useForm()
   const [show, setShow] = useState(false)
   const [confirmShow, setConfirmShow] = useState(false)
+  const {signup, error} = useContext(AuthContext)
 
   const handleClick = () => setShow(!show)
   const confirmHandleClick = () => setConfirmShow(!confirmShow)
@@ -37,8 +38,11 @@ export default function signupPage() {
 
   const onSubmit = (data, e) => {
     e.preventDefault()
+    const {email, phone, password, password_confirm} = data
     // console.log(data)
-    router.push('/login');
+
+
+    signup({email, phone, password, password_confirm})
   }
 
   return (
@@ -60,7 +64,6 @@ export default function signupPage() {
                     type='email'
                     id='email'
                     placeholder='Enter Email'
-                    borderColor='grey'
                     {...register('email', { required: 'Email is required' })}
                   />
                   <FormErrorMessage>
@@ -73,7 +76,6 @@ export default function signupPage() {
                     type='text'
                     id='phone-number'
                     placeholder='Enter Phone Number'
-                    borderColor='grey'
                     {...register('phone', { required: 'Phone is required' })}
                   />
                   <FormErrorMessage>
@@ -84,7 +86,6 @@ export default function signupPage() {
                   <FormLabel fontWeight='normal'>Password</FormLabel>
                   <InputGroup>
                     <input
-                      borderColor='grey'
                       id="password"
                       pr='2rem'
                       type={show ? 'text' : 'password'}
@@ -114,12 +115,11 @@ export default function signupPage() {
                   <FormLabel fontWeight='normal'>Confirm Password</FormLabel>
                   <InputGroup>
                     <input
-                      borderColor='grey'
-                      id="confirm-password"
+                      id="password_confirm"
                       pr='2rem'
                       type={confirmShow  ? 'text' : 'password'}
                       placeholder='Confirm password'
-                      {...register('confirmPassword', {
+                      {...register('password_confirm', {
                         required: 'Confirm Password is Required',
                       })}
                     />

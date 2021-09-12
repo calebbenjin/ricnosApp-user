@@ -3,18 +3,16 @@ import cookie from 'cookie'
 
 export default async (req, res) => {
   if (req.method === 'POST') {
-    const {phone, email, password, password_confirm } = req.body
+    const { email, password } = req.body
 
-    const apiRes = await fetch(`${API_URL}/register`, {
+    const apiRes = await fetch(`${API_URL}/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        phone,
         email,
-        password, 
-        password_confirm,
+        password,
       }),
     })
 
@@ -24,6 +22,7 @@ export default async (req, res) => {
 
     if (apiRes.ok) {
       // Set Cookie
+      
       // res.setHeader(
       //   'Set-Cookie',
       //   cookie.serialize('token', String(data.jwt), {
@@ -36,10 +35,9 @@ export default async (req, res) => {
       // )
 
       res.status(200).json({ user: data.user })
+      console.log(data.user)
     } else {
-      res
-        .status(data.statusCode)
-        .json({ message: data.message[0].messages[0].message })
+      res.status(500).json({message: data.message})
     }
   } else {
     res.setHeader('Allow', ['POST'])

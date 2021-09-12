@@ -1,9 +1,9 @@
-import { useState, useContext } from 'react'
-import Layout from "../components/template/Layout";
+import { useState, useContext, useEffect } from 'react'
+import Layout from '../components/template/Layout'
 import Link from 'next/link'
 import { BsEye } from 'react-icons/bs'
-import login from '../styles/Login.module.css'
-import {useRouter} from 'next/router'
+import loginStyle from '../styles/Login.module.css'
+import { useRouter } from 'next/router'
 import {
   Box,
   FormControl,
@@ -16,15 +16,21 @@ import {
   Checkbox,
   Spacer,
   Heading,
-  Text
+  Text,
 } from '@chakra-ui/react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useForm } from 'react-hook-form'
 import Button from '../components/atoms/Buttons/FormBtn'
 import AuthContext from '../context/AuthContext'
+import Loading from '../components/atoms/Loading'
 
 export default function loginPage() {
-  const {user} = useContext(AuthContext)
-  
+  const {login, isError, isLoading } = useContext(AuthContext)
+  const [isLoader, setIsLoader] = useState(false)
+
+  // useEffect(() => error && toast.error(error))
+
   const {
     register,
     handleSubmit,
@@ -35,24 +41,29 @@ export default function loginPage() {
   const handleClick = () => setShow(!show)
 
   const router = useRouter()
-
+  
+  useEffect(() => isError && toast.error(isError))
 
   const onSubmit = (data, e) => {
     e.preventDefault()
-    console.log(data)
-    router.push('/dashboard')
+    const {email, password} = data
+    // console.log(data)
+    // router.push('/dashboard')
+    login({email, password})
   }
 
   return (
     <Layout>
-      <Box className={login.cardBg}>
+      <Box className={loginStyle.cardBg}>
         {/* <Banner className={styles.about} /> */}
-
+        <ToastContainer />
         <Box className={login.form}>
           <Container maxWidth='container.xl'>
             <Box width={['100%', '50%']}></Box>
             <Box>
-              <Heading mt="20" mb="10" size="lg">Login</Heading>
+              <Heading mt='20' mb='10' size='lg'>
+                Login
+              </Heading>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <FormControl isInvalid={errors.email}>
                   <FormLabel fontWeight='normal'>Email</FormLabel>
@@ -71,10 +82,12 @@ export default function loginPage() {
                   <InputGroup>
                     <input
                       pr='2rem'
-                      id="password"
+                      id='password'
                       type={show ? 'text' : 'password'}
                       placeholder='Enter password'
-                      {...register('password', { required: 'Password is Required'})}
+                      {...register('password', {
+                        required: 'Password is Required',
+                      })}
                     />
                     <InputRightElement>
                       <BsEye onClick={handleClick}>
@@ -88,7 +101,9 @@ export default function loginPage() {
                 </FormControl>
                 <FormControl mb='5'>
                   <Flex>
-                    <Checkbox isRequired={true} colorScheme='red'>Remember me</Checkbox>
+                    <Checkbox isRequired={true} colorScheme='red'>
+                      Remember me
+                    </Checkbox>
                     <Spacer />
                     <Link href='/forgetpassword'>Forget Password?</Link>
                   </Flex>
@@ -98,7 +113,12 @@ export default function loginPage() {
                   <Link href='/signup'>Don't have an account? Signup</Link>
                 </Box>
 
-                <Button type="submit" >Login</Button>
+                <Button
+                  type='submit'
+                  
+                >
+                  {isLoading ? 'Login....' : 'Login'}
+                </Button>
                 {/* <Button type="submit" color="red">LOGIN</Button> */}
               </form>
             </Box>
